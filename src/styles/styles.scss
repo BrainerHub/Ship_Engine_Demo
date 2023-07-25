@@ -1,0 +1,279 @@
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.MainPart {
+  display: flex;
+}
+.sideBar {
+  min-height: 100vh;
+  padding: 25px 15px;
+  box-shadow: 0 0 8px #ccc;
+  background-color: #343a40;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 250px;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.MainBody {
+  width: calc(100% - 250px);
+  margin-left: auto;
+  padding: 30px;
+  height: 100vh;
+  overflow: auto;
+  background-color: #eee;
+}
+.themeBtn {
+  background-color: #d1e9fd;
+  color: #343a40;
+  padding: 8px 20px;
+  &:hover {
+    background-color: #fff;
+  }
+  &.activeTab {
+    background-color: #fff;
+  }
+}
+.ApiHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+.SearchBox {
+  display: flex;
+  fieldset {
+    border: none;
+  }
+  input {
+    padding: 10px 20px;
+    border-radius: 0;
+    border: none;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: normal;
+  }
+  button {
+    border-radius: 0;
+    box-shadow: unset;
+    font-size: 14px;
+    line-height: normal;
+    transition: 0.5s;
+    background-color: #343a40;
+    color: #fff;
+    &:hover {
+      box-shadow: unset;
+      background-color: #d1e9fd;
+      color: #343a40;
+    }
+  }
+}
+.ApiBtnPart {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  justify-content: space-between;
+  button {
+    width: 24%;
+    white-space: nowrap;
+  }
+}
+.togglBtn {
+  position: absolute;
+  top: 13px;
+  padding: 0 11px;
+  width: 45px;
+  height: 38px;
+  min-width: auto;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #343a40;
+  color: #fff;
+  display: none;
+  img {
+    width: 100%;
+  }
+  &:hover {
+    background-color: #ccc;
+  }
+}
+.closeBtn {
+  min-width: auto;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #343a40;
+  margin-left: auto;
+  line-height: 22px;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  padding: 7px 10px;
+  border-radius: 0 0 0 23px;
+  display: none;
+  &:hover {
+    background-color: #ccc;
+  }
+}
+.page-title {
+  margin-bottom: 35px;
+  font-size: 36px;
+  word-break: break-all;
+}
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+.shipmentBox {
+  display: flex;
+  gap: 30px;
+  &__inner {
+    width: 50%;
+    padding: 25px 15px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  &.productPage {
+    max-width: 900px;
+    margin: auto;
+    display: block;
+    .shipmentBox__inner {
+      width: 100%;
+    }
+  }
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.formGroupMain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+.formGroup {
+  width: 48%;
+  .MuiFormControl-root {
+    width: 100%;
+  }
+}
+.FooterbtnPart {
+  text-align: center;
+  margin: 30px 0;
+  button {
+    background-color: #343a40;
+    color: #fff;
+    box-shadow: unset;
+    width: 100%;
+    max-width: 120px;
+    &:hover {
+      color: #343a40;
+    }
+  }
+}
+
+@media only screen and (max-width: 1299px) {
+  .ApiBtnPart {
+    // justify-content: unset;
+    gap: 15px;
+    button {
+      width: 32%;
+    }
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .formGroup {
+    width: 47%;
+  }
+  .ApiBtnPart {
+    button {
+      width: 31%;
+      font-size: 13px;
+      line-height: normal;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .togglBtn,
+  .closeBtn {
+    display: flex;
+  }
+  .sideBar {
+    margin-left: -250px;
+    transition: 0.5s;
+    box-shadow: unset;
+    padding-top: 50px;
+    &.show {
+      margin: 0;
+    }
+  }
+  .MainBody {
+    width: 100%;
+    margin-top: 65px;
+    height: calc(100vh - 65px);
+  }
+  .page-title {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .shipmentBox {
+    flex-wrap: wrap;
+    &__inner {
+      width: 100%;
+    }
+  }
+  .MainBody {
+    padding: 25px 15px;
+  }
+  .sectionTitle {
+    font-size: 22px;
+  }
+  .formGroup {
+    input {
+      padding: 10px;
+      height: auto;
+    }
+    label {
+      font-size: 14px;
+      transform: translate(14px, 11px) scale(1);
+      &.Mui-focused {
+        transform: translate(14px, -7px) scale(0.75);
+      }
+    }
+  }
+  .ApiBtnPart {
+    button {
+      width: 48%;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ApiHeader {
+    flex-wrap: wrap;
+    .SearchBox {
+      width: 100%;
+      .MuiFormControl-root {
+        width: 100%;
+      }
+    }
+  }
+  .MainBody {
+    padding: 30px 15px;
+  }
+  .page-title {
+    font-size: 26px;
+  }
+  .ApiBtnPart {
+    button {
+      width: 100%;
+    }
+  }
+}
